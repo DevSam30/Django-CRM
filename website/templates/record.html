@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Customer record for id: {{customer_record.id}}</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-dark">
+    <tr>
+	  <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+    		<td>{{customer_record.id}}</td>
+    		<td>{{customer_record.first_name}} {{customer_record.last_name}}</td>
+			<td>{{customer_record.email}}</td>
+			<td>{{customer_record.phone}}</td>
+			<td>{{customer_record.address}}</td>
+    </tr>
+	
+  </tbody>
+</table>
+
+<br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete' %}" class="btn btn-danger">Delete</a>
+
+{% endblock %}
